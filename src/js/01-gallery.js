@@ -14,7 +14,6 @@ const createGalleryItem = ({ preview, original, description }) => {
         <img
           class="gallery__image"
           src="${preview}"
-          data-source="${original}"
           alt="${description}"
         />
       </a>
@@ -29,6 +28,11 @@ const renderGallery = (items) => {
 
 renderGallery(galleryItems);
 
-const lightbox = new SimpleLightbox('.gallery a', { /* options */ });
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+
 
 console.log(galleryItems);
+

@@ -27,9 +27,15 @@ messageInput.addEventListener('input', updateLocalStorage);
 // Очищення даних форми та локального сховища при відправці
 form.addEventListener('submit', (event) => {
   event.preventDefault();
+  
+  if (emailInput.value.trim() === '' || messageInput.value.trim() === '') {
+    alert('Please fill in all fields.');
+    return;
+  }
+
   const currentState = {
-    email: '',
-    message: '',
+    email: emailInput.value,
+    message: messageInput.value,
   };
   localStorage.removeItem(LOCAL_STORAGE_KEY);
   emailInput.value = '';

@@ -14,7 +14,11 @@ vimeoPlayer.on('timeupdate', throttle(function(data) {
 
 // Відновлення відтворення з позиції відео, збереженої в сховищі
 const storedTime = localStorage.getItem(currentTimeStorageKey);
+vimeoPlayer.setCurrentTime(parseFloat(storedTime || 0));
 
-if (storedTime) {
-    vimeoPlayer.setCurrentTime(parseFloat(storedTime));
-}
+// if (storedTime) {
+//     vimeoPlayer.setCurrentTime(parseFloat(storedTime));
+// }
+
+
+
