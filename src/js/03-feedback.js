@@ -42,3 +42,4 @@ form.addEventListener('submit', (event) => {
   messageInput.value = '';
   console.log('Дані форми відправлено:', currentState);
 });
+
